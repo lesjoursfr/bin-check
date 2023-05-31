@@ -1,4 +1,4 @@
-# bin-check [![CI](https://github.com/kevva/bin-check/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/kevva/bin-check/actions/workflows/ci.yml)
+# bin-check [![CI](https://github.com/XhmikosR/bin-check/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/XhmikosR/bin-check/actions/workflows/ci.yml)
 
 > Check if a binary is working by checking its exit code
 
@@ -13,7 +13,7 @@ npm install bin-check
 ## Usage
 
 ```js
-import binCheck from 'bin-check';
+import binCheck from '@xhmikosr/bin-check';
 
 binCheck('/bin/sh', ['--version']).then(works => {
 	console.log(works);

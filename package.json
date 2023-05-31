@@ -1,9 +1,12 @@
 {
-  "name": "bin-check",
+  "name": "@xhmikosr/bin-check",
   "version": "4.1.0",
   "description": "Check if a binary is working",
   "license": "MIT",
-  "repository": "kevva/bin-check",
+  "repository": "XhmikosR/bin-check",
+  "publishConfig": {
+    "access": "public"
+  },
   "author": {
     "name": "Kevin Mårtensson",
     "email": "kevinmartensson@gmail.com",
