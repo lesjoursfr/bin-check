@@ -1,5 +1,5 @@
 import execa from 'execa';
-import executable from 'executable';
+import executable from '@xhmikosr/executable';
 
 const binCheck = (bin, args) => {
 	if (!Array.isArray(args)) {
