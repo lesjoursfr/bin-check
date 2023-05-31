@@ -20,7 +20,7 @@
     "lint": "xo",
     "xo": "xo",
     "fix": "xo --fix",
-    "test": "npm run xo && npm run ava"
+    "test": "npm run ava"
   },
   "main": "index.js",
   "type": "module",
