@@ -1,8 +1,7 @@
-'use strict';
-const execa = require('execa');
-const executable = require('executable');
+import execa from 'execa';
+import executable from 'executable';
 
-module.exports = (bin, args) => {
+const binCheck = (bin, args) => {
 	if (!Array.isArray(args)) {
 		args = ['--help'];
 	}
@@ -10,22 +9,24 @@ module.exports = (bin, args) => {
 	return executable(bin)
 		.then(works => {
 			if (!works) {
-				throw new Error(`Couldn't execute the \`${bin}\` binary. Make sure it has the right permissions.`);
+				throw new Error(`Couldn't execute the "${bin}" binary. Make sure it has the right permissions.`);
 			}
 
 			return execa(bin, args);
 		})
-		.then(res => res.code === 0);
+		.then(result => result.exitCode === 0);
 };
 
-module.exports.sync = (bin, args) => {
+binCheck.sync = (bin, args) => {
 	if (!Array.isArray(args)) {
 		args = ['--help'];
 	}
 
 	if (!executable.sync(bin)) {
-		throw new Error(`Couldn't execute the \`${bin}\` binary. Make sure it has the right permissions.`);
+		throw new Error(`Couldn't execute the "${bin}" binary. Make sure it has the right permissions.`);
 	}
 
-	return execa.sync(bin, args).status === 0;
+	return execa.sync(bin, args).exitCode === 0;
 };
+
+export default binCheck;

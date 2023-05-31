@@ -1,19 +1,19 @@
-# bin-check [![Build Status](https://travis-ci.org/kevva/bin-check.svg?branch=master)](https://travis-ci.org/kevva/bin-check)
+# bin-check [![CI](https://github.com/kevva/bin-check/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/kevva/bin-check/actions/workflows/ci.yml)
 
 > Check if a binary is working by checking its exit code
 
 
 ## Install
 
-```
-$ npm install bin-check
+```sh
+npm install bin-check
 ```
 
 
 ## Usage
 
 ```js
-const binCheck = require('bin-check');
+import binCheck from 'bin-check';
 
 binCheck('/bin/sh', ['--version']).then(works => {
 	console.log(works);
@@ -40,8 +40,8 @@ Path to the binary.
 
 #### arguments
 
-Type: `Array`<br>
-Default: `['--help']`
+* Type: `Array`
+* Default: `['--help']`
 
 Arguments to run the binary with.
 

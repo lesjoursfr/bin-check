@@ -10,10 +10,19 @@
     "url": "https://github.com/kevva"
   },
   "engines": {
-    "node": ">=4"
+    "node": "^14.14.0 || >=16.0.0"
   },
   "scripts": {
-    "test": "xo && ava"
+    "ava": "ava",
+    "lint": "xo",
+    "xo": "xo",
+    "fix": "xo --fix",
+    "test": "npm run xo && npm run ava"
+  },
+  "main": "index.js",
+  "type": "module",
+  "exports": {
+    ".": "./index.js"
   },
   "files": [
     "index.js"
@@ -25,11 +34,11 @@
     "test"
   ],
   "dependencies": {
-    "execa": "^0.7.0",
-    "executable": "^4.1.0"
+    "execa": "^5.1.1",
+    "executable": "^4.1.1"
   },
   "devDependencies": {
-    "ava": "*",
-    "xo": "*"
+    "ava": "^5.3.0",
+    "xo": "^0.54.2"
   }
 }
