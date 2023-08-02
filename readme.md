@@ -1,26 +1,26 @@
-# bin-check [![CI](https://github.com/XhmikosR/bin-check/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/XhmikosR/bin-check/actions/workflows/ci.yml)
+[![npm version](https://badge.fury.io/js/@lesjoursfr%2Fbin-check.svg)](https://badge.fury.io/js/@lesjoursfr%2Fbin-check)
+[![QC Checks](https://github.com/lesjoursfr/bin-check/actions/workflows/quality-control.yml/badge.svg)](https://github.com/lesjoursfr/bin-check/actions/workflows/quality-control.yml)
 
-> Check if a binary is working by checking its exit code
+# bin-check
 
+Check if a binary is working by checking its exit code
 
 ## Install
 
 ```sh
-npm install bin-check
+npm install @lesjoursfr/bin-check
 ```
-
 
 ## Usage
 
 ```js
-import binCheck from '@xhmikosr/bin-check';
+import binCheck from "@lesjoursfr/bin-check";
 
-binCheck('/bin/sh', ['--version']).then(works => {
+binCheck("/bin/sh", ["--version"]).then((works) => {
 	console.log(works);
 	//=> true
 });
 ```
-
 
 ## API
 
@@ -40,11 +40,10 @@ Path to the binary.
 
 #### arguments
 
-* Type: `Array`
-* Default: `['--help']`
+-   Type: `Array`
+-   Default: `['--help']`
 
 Arguments to run the binary with.
-
 
 ## License
 

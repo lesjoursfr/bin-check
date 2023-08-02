@@ -1,47 +1,73 @@
 {
-  "name": "@xhmikosr/bin-check",
-  "version": "6.0.0",
-  "description": "Check if a binary is working",
-  "license": "MIT",
-  "repository": "XhmikosR/bin-check",
-  "publishConfig": {
-    "access": "public"
-  },
-  "author": {
-    "name": "Kevin Mårtensson",
-    "email": "kevinmartensson@gmail.com",
-    "url": "https://github.com/kevva"
-  },
-  "engines": {
-    "node": "^14.14.0 || >=16.0.0"
-  },
-  "scripts": {
-    "ava": "ava",
-    "lint": "xo",
-    "xo": "xo",
-    "fix": "xo --fix",
-    "test": "npm run ava"
-  },
-  "main": "index.js",
-  "type": "module",
-  "exports": {
-    ".": "./index.js"
-  },
-  "files": [
-    "index.js"
-  ],
-  "keywords": [
-    "binary",
-    "check",
-    "executable",
-    "test"
-  ],
-  "dependencies": {
-    "execa": "^5.1.1",
-    "isexe": "^2.0.0"
-  },
-  "devDependencies": {
-    "ava": "^4.3.3",
-    "xo": "^0.54.2"
-  }
+	"name": "@lesjoursfr/bin-check",
+	"version": "6.0.0",
+	"description": "Check if a binary is working",
+	"license": "MIT",
+	"repository": {
+		"url": "git+https://github.com/lesjoursfr/bin-check.git"
+	},
+	"homepage": "https://github.com/lesjoursfr/bin-check#readme",
+	"bugs": {
+		"url": "https://github.com/lesjoursfr/bin-check/issues"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"author": {
+		"name": "Kevin Mårtensson",
+		"email": "kevinmartensson@gmail.com",
+		"url": "https://github.com/kevva"
+	},
+	"engines": {
+		"node": "18.x || 20.x"
+	},
+	"exports": "./lib/index.js",
+	"types": "./lib/index.d.ts",
+	"files": [
+		"lib/**/*",
+		"src/**/*"
+	],
+	"scripts": {
+		"freshlock": "rm -rf node_modules/ && rm .yarn/install-state.gz && rm -r .yarn/cache/ && rm yarn.lock && yarn",
+		"check-lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+		"check-format": "prettier --check \"**/*.{ts,js,cjs,mjs,json,yml,md}\"",
+		"check-tsc": "tsc --noEmit",
+		"lint": "eslint . --fix --ext .js,.jsx,.ts,.tsx",
+		"format": "prettier --write \"**/*.{ts,js,cjs,mjs,json,yml,md}\"",
+		"build": "tsc",
+		"test": "NODE_OPTIONS='--loader=ts-node/esm' ava"
+	},
+	"keywords": [
+		"binary",
+		"check",
+		"executable",
+		"test"
+	],
+	"type": "module",
+	"dependencies": {
+		"execa": "^7.2.0",
+		"isexe": "^3.1.1"
+	},
+	"devDependencies": {
+		"@tsconfig/node18": "^18.2.0",
+		"@types/node": "^20.4.6",
+		"@typescript-eslint/eslint-plugin": "^6.2.1",
+		"@typescript-eslint/parser": "^6.2.1",
+		"ava": "^5.3.1",
+		"eslint": "^8.46.0",
+		"eslint-config-prettier": "^8.10.0",
+		"prettier": "^3.0.1",
+		"ts-node": "^10.9.1",
+		"typescript": "^5.1.6"
+	},
+	"ava": {
+		"extensions": {
+			"ts": "module"
+		},
+		"nodeArguments": [
+			"--loader=ts-node/esm"
+		],
+		"timeout": "1m"
+	},
+	"packageManager": "yarn@3.6.1"
 }
