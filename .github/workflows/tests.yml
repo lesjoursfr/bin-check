@@ -28,4 +28,4 @@ jobs:
       - name: Run tests
         env:
           NODE_OPTIONS: --loader=ts-node/esm
-        run: npx ava
+        run: npx mocha

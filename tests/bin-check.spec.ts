@@ -1,4 +1,4 @@
-import test from "ava";
+import assert from "assert";
 import path from "path";
 import process from "process";
 import { fileURLToPath } from "url";
@@ -17,20 +17,18 @@ if (platform !== "darwin" && platform !== "linux" && platform !== "win32") {
   throw new Error(`Unsupported platform: ${platform}`);
 }
 
-test("async", async (t) => {
-  t.true(await binCheck(bin[platform]));
-  await t.throwsAsync(
+it("async", async function () {
+  assert.strictEqual(await binCheck(bin[platform]), true);
+  await assert.rejects(
     binCheck("node", [__filename]),
-    undefined,
     `Couldn't execute the "${__filename}" binary. Make sure it has the right permissions.`
   );
 });
 
-test("sync", (t) => {
-  t.true(binCheck.sync(bin[platform]));
-  t.throws(
+it("sync", function () {
+  assert.strictEqual(binCheck.sync(bin[platform]), true);
+  assert.throws(
     binCheck.sync.bind(null, "node", [__filename]),
-    undefined,
     `Couldn't execute the "${__filename}" binary. Make sure it has the right permissions.`
   );
 });

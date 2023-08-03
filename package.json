@@ -35,7 +35,7 @@
 		"lint": "eslint . --fix --ext .js,.jsx,.ts,.tsx",
 		"format": "prettier --write \"**/*.{ts,js,cjs,mjs,json,yml,md}\"",
 		"build": "tsc",
-		"test": "NODE_OPTIONS='--loader=ts-node/esm' ava"
+		"test": "NODE_OPTIONS='--loader=ts-node/esm' mocha"
 	},
 	"keywords": [
 		"binary",
@@ -50,24 +50,16 @@
 	},
 	"devDependencies": {
 		"@tsconfig/node18": "^18.2.0",
+		"@types/mocha": "^10.0.1",
 		"@types/node": "^20.4.6",
 		"@typescript-eslint/eslint-plugin": "^6.2.1",
 		"@typescript-eslint/parser": "^6.2.1",
-		"ava": "^5.3.1",
 		"eslint": "^8.46.0",
 		"eslint-config-prettier": "^8.10.0",
+		"mocha": "^10.2.0",
 		"prettier": "^3.0.1",
 		"ts-node": "^10.9.1",
 		"typescript": "^5.1.6"
-	},
-	"ava": {
-		"extensions": {
-			"ts": "module"
-		},
-		"nodeArguments": [
-			"--loader=ts-node/esm"
-		],
-		"timeout": "1m"
 	},
 	"packageManager": "yarn@3.6.1"
 }
