@@ -41,8 +41,8 @@ Path to the binary.
 
 #### arguments
 
--   Type: `Array`
--   Default: `['--help']`
+- Type: `Array`
+- Default: `['--help']`
 
 Arguments to run the binary with.
 
