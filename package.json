@@ -1,6 +1,6 @@
 {
 	"name": "@lesjoursfr/bin-check",
-	"version": "8.0.0",
+	"version": "8.0.1",
 	"description": "Check if a binary is working",
 	"license": "MIT",
 	"repository": {
