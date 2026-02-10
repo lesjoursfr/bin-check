@@ -46,7 +46,7 @@
 	"type": "module",
 	"dependencies": {
 		"execa": "^9.6.1",
-		"isexe": "^3.1.2"
+		"isexe": "^4.0.0"
 	},
 	"devDependencies": {
 		"@eslint/js": "10.0.1",
