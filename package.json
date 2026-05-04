@@ -4,6 +4,7 @@
 	"description": "Check if a binary is working",
 	"license": "MIT",
 	"repository": {
+		"type": "git",
 		"url": "git+https://github.com/lesjoursfr/bin-check.git"
 	},
 	"homepage": "https://github.com/lesjoursfr/bin-check#readme",
@@ -21,12 +22,15 @@
 	"engines": {
 		"node": "22.x || 24.x"
 	},
-	"exports": "./lib/index.js",
-	"types": "./lib/index.d.ts",
-	"files": [
-		"lib/**/*",
-		"src/**/*"
+	"keywords": [
+		"binary",
+		"check",
+		"executable",
+		"test"
 	],
+	"main": "./lib/index.js",
+	"types": "./lib/index.d.ts",
+	"type": "module",
 	"scripts": {
 		"freshlock": "rm -rf node_modules/ && rm .yarn/install-state.gz && rm yarn.lock && yarn",
 		"check-lint": "eslint",
@@ -37,13 +41,6 @@
 		"build": "tsc",
 		"test": "NODE_OPTIONS='--loader=ts-node/esm' mocha"
 	},
-	"keywords": [
-		"binary",
-		"check",
-		"executable",
-		"test"
-	],
-	"type": "module",
 	"dependencies": {
 		"execa": "^9.6.1",
 		"isexe": "^4.0.0"
