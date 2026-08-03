@@ -42,7 +42,7 @@
 		"test": "NODE_OPTIONS='--loader=ts-node/esm' mocha"
 	},
 	"dependencies": {
-		"execa": "^9.6.1",
+		"execa": "^10.0.0",
 		"isexe": "^4.0.0"
 	},
 	"devDependencies": {
